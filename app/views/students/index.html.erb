@@ -1,0 +1,26 @@
+<% provide(:title, 'All students') %>
+<h1>All students record </h1>
+
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @students.each do |stu| %>
+      <tr>
+        <th scope="row"><%= stu.id %></th>
+        <td><%= stu.name %></td>
+        <td>
+          <% if current_student.admin? && !current_student?(stu) %>
+            <%= button_to "delete", destroystu_path, method: :delete, data: { confirm: "You sure?"} %>
+          <% end %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= will_paginate %>
