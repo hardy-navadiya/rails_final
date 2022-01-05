@@ -11,7 +11,7 @@
           <button class="contact btn btn-success">Contact</button> &nbsp;
         </li>
         <li class="nav-item">
-          <button class="signup btn btn-danger">Signup</button>
+          <%= link_to "sign up", signup_path, class:"nav-link" %>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -38,26 +38,7 @@
 
 <script type="text/javascript">
   $(document).ready(function(){
-    // home script 
-    // $(".home").click(function(event) {
-    //   $.ajax({
-    //     url: '/',
-    //     type: 'GET',
-    //     dataType: 'script',
-    //     beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
-    //   })
-    //   .done(function() {
-    //     console.log("success");
-    //   })
-    //   .fail(function() {
-    //     console.log("error");
-    //   })
-    //   .always(function() {
-    //     console.log("complete");
-    //   });
-      
-    // });
-
+    
     // contact script 
     $(".contact").click(function(){
       $.ajax({

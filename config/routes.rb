@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   get 'signup' => 'students#new'
 
   root 'static_pages#home'
+
+  resources :students
 end
