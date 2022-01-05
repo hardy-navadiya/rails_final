@@ -1,17 +1,17 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <%= link_to "Home", root_path, class:"navbar-brand home" %>
-
+    <!-- <button class="btn btn-primary home">Home </button> &nbsp; -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <button class="contact btn btn-success">Contact</button>
+          <button class="contact btn btn-success">Contact</button> &nbsp;
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <button class="signup btn btn-danger">Signup</button>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -38,6 +38,26 @@
 
 <script type="text/javascript">
   $(document).ready(function(){
+    // home script 
+    // $(".home").click(function(event) {
+    //   $.ajax({
+    //     url: '/',
+    //     type: 'GET',
+    //     dataType: 'script',
+    //     beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+    //   })
+    //   .done(function() {
+    //     console.log("success");
+    //   })
+    //   .fail(function() {
+    //     console.log("error");
+    //   })
+    //   .always(function() {
+    //     console.log("complete");
+    //   });
+      
+    // });
+
     // contact script 
     $(".contact").click(function(){
       $.ajax({
@@ -46,8 +66,8 @@
         dataType: 'script',
         beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
       })
-      .done(function(res) {
-        $('.result').html(res);
+      .done(function() {
+        console.log("success");
       })
       .fail(function() {
         console.log("error");
@@ -55,6 +75,25 @@
       .always(function() {
         console.log("complete");
       });
+    });
+
+    // signup script
+    $(".signup").click(function(event) {
+      $.ajax({
+        url: '/signup',
+        type: 'GET',
+        dataType: 'script',
+      })
+      .done(function() {
+        console.log("success");
+      })
+      .fail(function() {
+        console.log("error");
+      })
+      .always(function() {
+        console.log("complete");
+      });
+      
     });
   });
 </script>
